@@ -1,0 +1,23 @@
+{
+  "name": "new-package",
+  "version": "1.0.0",
+  "description": "Setup inquirer and other dependencies",
+  "main": "Word.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FenixRising13/Hangman-wConstructors.git"
+  },
+  "author": "Mark Powalisz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FenixRising13/Hangman-wConstructors/issues"
+  },
+  "homepage": "https://github.com/FenixRising13/Hangman-wConstructors#readme",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "inquirer": "^5.0.0"
+  }
+}
