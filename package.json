@@ -2,7 +2,7 @@
   "name": "new-package",
   "version": "1.0.0",
   "description": "Setup inquirer and other dependencies",
-  "main": "Word.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
