@@ -24,6 +24,6 @@ Week 6 Assignment: Hangman
 ⋅⋅*Terminal
 
 **Authors**
-⋅⋅*Mark Powalisz
+⋅⋅Mark Powalisz
 
-![alt text](./start-game.gif "Start GIF")
+![alt text](start-game.gif)
