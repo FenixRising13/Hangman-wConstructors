@@ -13,7 +13,7 @@ figlet('Star Wars \nTrivia', function (err, data) {
         return;
     }
 
-    console.log(data)
+    console.log(Chalk.blue(data));
 });
 /////////////////////////////////////////Aesthetic//
 
@@ -25,6 +25,9 @@ var lettersGuessed = [];
 // Creates a function to ask a question via Inquirer NPM package
 // will repeat 10 times based on guessesLeft.
 var askQuestion = function () {
+
+    console.log(Chalk.red(letter));
+
     // if statement to ensure that we only give 10 guesses
     if (guessesLeft < 10) {
         // runs inquirer and asks the user a series of questions whose replies are

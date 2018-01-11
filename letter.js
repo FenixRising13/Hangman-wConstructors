@@ -1,28 +1,20 @@
+// Require word.js
 var word = require('./word');
+// Global Variables
+var wordinplay = [];
 
 // Required constructor for Letter.
 function Letter() {
-    this.lettersOfTheWord = [];
 
     for (var i = 0; i < word.length; i++) {
-        letter = word.split("");
-        lettersOfTheWord.push(letter);
-
-
-    }
-
-
-    for (var i = 0; i < lettersOfTheWord.length; i++) {
-        if (this.lettersOfTheWord[i] = ' ') {
-            return ' ';
+        if (word[i] == ' ') {
+            wordinplay.push(' ');
         }
         else {
-            return '_';
+            wordinplay.push('_');
         }
     }
-
 }
-
 Letter();
 
-module.exports = Letter;
+module.exports = wordinplay;
