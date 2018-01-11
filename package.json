@@ -18,6 +18,7 @@
   "homepage": "https://github.com/FenixRising13/Hangman-wConstructors#readme",
   "dependencies": {
     "chalk": "^2.3.0",
+    "figlet": "^1.2.0",
     "inquirer": "^5.0.0"
   }
 }
