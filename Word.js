@@ -1,12 +1,12 @@
-var WordList = require('./words');
+// Word Bank.
+var WordList = [
+  'CHEWBACCA', 'LUKE SKYWALKER', 'PRINCESS LEIA', 'KYLO REN', 'HAN SOLO', 'DARTH VADER', 'MILLENIUM FALCON', 'DEATH STAR'
+];
 
-var currentword
-
-// Required constructor for Word.
-function Word() {
-  currentword = WordList[Math.floor(Math.random() * WordList.length)];
-}
+var Word =function () {
+  this.word = WordList[Math.floor(Math.random() * WordList.length)];
+};
 
 Word();
 
-module.exports = currentword;
+module.exports = Word;

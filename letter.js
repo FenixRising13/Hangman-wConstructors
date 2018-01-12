@@ -1,20 +1,22 @@
 // Require word.js
-var word = require('./word');
+var Word = require('./word');
 // Global Variables
-var wordinplay = [];
+
 
 // Required constructor for Letter.
-function Letter() {
+var Letter = function () {
+    this.word = new Word;
+    this.wordinplay = [];
 
-    for (var i = 0; i < word.length; i++) {
-        if (word[i] == ' ') {
-            wordinplay.push(' ');
+    for (var i = 0; i < this.word.word.length; i++) {
+        if (this.word.word[i] == ' ') {
+            this.wordinplay.push(' ');
         }
         else {
-            wordinplay.push('_');
+            this.wordinplay.push('_');
         }
     }
 }
-Letter();
 
-module.exports = wordinplay;
+
+module.exports = Letter;
