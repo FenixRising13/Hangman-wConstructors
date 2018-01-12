@@ -27,8 +27,7 @@ var newGame = function () {
     var chosenword = letter.chosenword;
     var guesses = 0;
     var lettersGuessed = [];
-    console.log(wordinplay);
-    console.log(chosenword);
+    console.log(Chalk.red(wordinplay));
     // if statement to ensure that we only give 10 guesses
     var LoopOver = function () {
 
