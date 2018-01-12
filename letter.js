@@ -5,7 +5,6 @@ var Word = require('./word');
 var Letter = function () {
     this.word = new Word;
     this.wordinplay = [];
-    this.chosenword = word.split('');
 
     for (var i = 0; i < this.word.word.length; i++) {
         if (this.word.word[i] == ' ') {

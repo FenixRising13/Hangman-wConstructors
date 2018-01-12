@@ -24,14 +24,32 @@ var newGame = function () {
     this.letter = new Letter;
     var wordinplay = letter.wordinplay;
     var word = letter.word.word;
-    var chosenword = letter.chosenword;
     var guesses = 0;
     var lettersGuessed = [];
+    
     console.log(Chalk.red(wordinplay));
     // if statement to ensure that we only give 10 guesses
     var LoopOver = function () {
-
-        if (guesses < 10) {
+        var newWord = word.toString();
+        var verify = wordinplay.join('');
+        if (newWord == verify) {
+            console.log('You won! Congratulations')
+            Inquirer.prompt([
+                {
+                    name: "replay",
+                    message: "Would you like to play again? y or n"
+                }
+            ]).then(function (answers) {
+                if (answers.replay == 'y') {
+                    newGame();
+                }
+                else if (answers.replay == 'n') {
+                    console.log('Thank you for playing');
+                }
+            })
+        }
+        
+        else if (guesses < 10) {
             // runs inquirer and asks the user a series of questions whose replies are
             // stored within the variable answers inside of the .then statement
             Inquirer.prompt([
@@ -46,14 +64,20 @@ var newGame = function () {
                 lettersGuessed.push(letters);
 
 
-                /////////////////////////////Black Hole
-                for (i = 0; i < word.length; i++) {
-                    if (letters == word.charAt(i)) {
-                        wordinplay.splice(word.indexOf(word[i]), 1, word[i]);
-                    }
+                /////////////////////////////Black Hole...
+                // for (i = 0; i < word.length; i++) {
+                //     if (letters == word.charAt(i)) {
+                //         wordinplay.splice(word.indexOf(word[i]), 1, word[i]);
+                //     }
+                // }
+                //////...where dreams go to die...///////
+                var position = word.indexOf(letters);
+                while (position != -1) {
+                    wordinplay.splice(position, 1, letters);
+                    position = word.indexOf(letters,position+1);
                 }
 
-                console.log(wordinplay);
+                console.log(Chalk.red(wordinplay));
                 console.log('Letters Guessed: ' + lettersGuessed);
                 guesses++;
                 LoopOver();
@@ -61,7 +85,6 @@ var newGame = function () {
 
 
         }
-
         // else statement which prints "all guessed used" to the console
         // when the code has been run ten times
         else if (guesses == 10) {
@@ -80,22 +103,7 @@ var newGame = function () {
                 }
             })
         }
-        else if (wordinplay == chosenword) {
-            console.log('You won! Congratulations')
-            Inquirer.prompt([
-                {
-                    name: "replay",
-                    message: "Would you like to play again? y or n"
-                }
-            ]).then(function (answers) {
-                if (answers.replay == 'y') {
-                    newGame();
-                }
-                else if (answers.replay == 'n') {
-                    console.log('Thank you for playing');
-                }
-            })
-        }
+        
 
     };
     LoopOver();
